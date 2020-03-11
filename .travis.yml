@@ -7,7 +7,7 @@ notifications:
     secure: 'qwF/FTtn70fnvbKHWTULrVXNdb7jiwkwl98KYLBJ0ZwX11sIKwKbj4mLuG3wFrFeSwHLVmrY/Ofrg2xj7zDIElyqXsUWvmPfaX3dEoBccAbYgnk2UEtLH0QvsAWP3lYvDyWeMguz9fRyiKNvKx72yAqQ7E94Wo0ZazeD41Jqdz1NVpLHP0YbEepeP80jcBhswbASJ+Hs8Ck2P2MhymjHT2Eoecm7BV0DxukrQcD2QMdDs4eRZFXpeqpJB82iw0MRmdXfOQKwN/UGbHs4uj2NuU2K9Pw7iOMG/awyK+L/eYiuNX8DkwXajK/zcO9R4k3XzCiHzaMhG72okKqJNDcTpQg2XujXDTpeg8F9q/+fkblajb5v6dQ60npROiJllqJX+cra60oWU/ww8ci0TUVdWsKL0PpJltb2F6sQOe/4spJ960G0cTR3tIt1NIcoYbBiOxYElPbqf1cEbQHuO3YvJHw56stDM1Ws5Ft2w+beYyGftXOePCIDlRCBUBO7bV92PvxMkUfTcmAemj/hc9qOLuEhwAdu+UOrK0LfH+XVUHD8NQUbe49be0675HsPhYfGXD3lCjCN91k8jxu6pNebUB10kjZksL9EhaEzeXLeO/EqTRXrQ2hj3CHx4wzoPlXeJ5nphMu0FaL2oVVxxU84Dg7W+GL1Y1gX1QFFMnMVUdY='
 env:
   global:
-  - SKLLVERSION="2.1"
+  - SKLLVERSION="2.0"
   - TESTDIR="${HOME}/skllcode/tests"
   matrix:
   - TESTFILES="tests/test_featureset.py tests/test_utilities.py"
