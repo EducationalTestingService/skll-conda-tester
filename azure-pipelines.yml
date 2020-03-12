@@ -42,9 +42,8 @@ jobs:
     displayName: "Update conda"
 
   - script: |
-      conda create --name skllenv --yes --quiet -c conda-forge -c ets python=%PYTHON_VERSION% skll=%SKLLVERSION%
+      conda create --name skllenv --yes --quiet -c conda-forge -c ets python=%PYTHON_VERSION% skll=%SKLLVERSION% nose
       conda init cmd.exe
-      conda install nose
     displayName: 'Install SKLL Package & Dependencies'
 
   - powershell: ./DistributeTests.ps1 
