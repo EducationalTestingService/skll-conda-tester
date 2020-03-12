@@ -9,6 +9,7 @@ env:
   global:
   - SKLLVERSION="2.1"
   - TESTDIR="${HOME}/skllcode"
+  - BINDIR="${SHOME}/miniconda3/envs/skllenv/bin"
   matrix:
   - TESTFILES="tests/test_featureset.py tests/test_utilities.py"
   - TESTFILES="tests/test_output.py"
@@ -35,7 +36,7 @@ install:
   - git config core.sparsecheckout true
   - echo "tests/*" > .git/info/sparse-checkout
   - echo "examples/*" >> .git/info/sparse-checkout
-  - git pull --depth=1 origin master
+  - git pull --depth=1 origin make-test-examples-testable-for-pkgs
   - conda create --name skllenv -c conda-forge -c ets python=3.6 skll=${SKLLVERSION} nose --yes
 
 # run these tests using the installed skll package
