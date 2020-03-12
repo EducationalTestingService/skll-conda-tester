@@ -8,7 +8,7 @@ notifications:
 env:
   global:
   - SKLLVERSION="2.1"
-  - TESTDIR="${HOME}/skllcode/tests"
+  - TESTDIR="${HOME}/skllcode"
   matrix:
   - TESTFILES="tests/test_featureset.py tests/test_utilities.py"
   - TESTFILES="tests/test_output.py"
