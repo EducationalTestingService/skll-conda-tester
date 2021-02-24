@@ -7,15 +7,16 @@ notifications:
     secure: 'qwF/FTtn70fnvbKHWTULrVXNdb7jiwkwl98KYLBJ0ZwX11sIKwKbj4mLuG3wFrFeSwHLVmrY/Ofrg2xj7zDIElyqXsUWvmPfaX3dEoBccAbYgnk2UEtLH0QvsAWP3lYvDyWeMguz9fRyiKNvKx72yAqQ7E94Wo0ZazeD41Jqdz1NVpLHP0YbEepeP80jcBhswbASJ+Hs8Ck2P2MhymjHT2Eoecm7BV0DxukrQcD2QMdDs4eRZFXpeqpJB82iw0MRmdXfOQKwN/UGbHs4uj2NuU2K9Pw7iOMG/awyK+L/eYiuNX8DkwXajK/zcO9R4k3XzCiHzaMhG72okKqJNDcTpQg2XujXDTpeg8F9q/+fkblajb5v6dQ60npROiJllqJX+cra60oWU/ww8ci0TUVdWsKL0PpJltb2F6sQOe/4spJ960G0cTR3tIt1NIcoYbBiOxYElPbqf1cEbQHuO3YvJHw56stDM1Ws5Ft2w+beYyGftXOePCIDlRCBUBO7bV92PvxMkUfTcmAemj/hc9qOLuEhwAdu+UOrK0LfH+XVUHD8NQUbe49be0675HsPhYfGXD3lCjCN91k8jxu6pNebUB10kjZksL9EhaEzeXLeO/EqTRXrQ2hj3CHx4wzoPlXeJ5nphMu0FaL2oVVxxU84Dg7W+GL1Y1gX1QFFMnMVUdY='
 env:
   global:
-  - SKLLVERSION="2.1"
+  - SKLLVERSION="2.5"
   - TESTDIR="${HOME}/skllcode"
   - BINDIR="${HOME}/miniconda3/envs/skllenv/bin"
   matrix:
-  - TESTFILES="tests/test_featureset.py tests/test_utilities.py"
-  - TESTFILES="tests/test_output.py"
-  - TESTFILES="tests/test_regression.py"
-  - TESTFILES="tests/test_input.py tests/test_preprocessing.py tests/test_metrics.py tests/test_custom_learner.py tests/test_logutils.py tests/test_examples.py"
-  - TESTFILES="tests/test_classification.py tests/test_cv.py tests/test_ablation.py"
+  - TESTFILES="tests/test_featureset.py tests/test_commandline_utils.py tests/test_custom_metrics.py"
+  - TESTFILES="tests/test_output.py tests/test_voting_learners_api_4.py tests/test_voting_learners_api_5.py"
+  - TESTFILES="tests/test_regression.py tests/test_voting_learners_api_2.py"
+  - TESTFILES="tests/test_input.py tests/test_preprocessing.py tests/test_metrics.py tests/test_custom_learner.py tests/test_logging_utils.py tests/test_examples.py tests/test_voting_learners_api_1.py tests/test_voting_learners_expts_1.py"
+  - TESTFILES="tests/test_classification.py tests/test_cv.py tests/test_ablation.py tests/test_voting_learners_expts_4.py"
+  - TESTFILES="tests/test_voting_learners_api_3.py tests/test_voting_learners_expts_2.py tests/test_voting_learners_expts_3.py tests/test_voting_learners_expts_5.py"
 
 
 # run on the new Travis infrastructure
@@ -37,7 +38,7 @@ install:
   - echo "tests/*" > .git/info/sparse-checkout
   - echo "examples/*" >> .git/info/sparse-checkout
   - git pull --depth=1 origin master
-  - conda create --name skllenv -c conda-forge -c ets python=3.6 skll=${SKLLVERSION} nose --yes
+  - conda create --name skllenv -c conda-forge -c ets python=3.8 skll=${SKLLVERSION} nose --yes
 
 # run these tests using the installed skll package
 script:
