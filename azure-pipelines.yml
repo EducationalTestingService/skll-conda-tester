@@ -52,7 +52,7 @@ jobs:
   - script: |
       echo $(pytestfiles)
       CALL activate skllenv
-      set TESTDIR=%TESTDIR% && nose2 -s %TESTDIR%/tests --plugin nose2.plugins.junitxml --junit-xml $(pytestfiles)
+      set TESTDIR=%TESTDIR% && nose2 -s %TESTDIR%\tests --plugin nose2.plugins.junitxml --junit-xml $(pytestfiles)
     displayName: 'Run tests'
 
   - task: PublishTestResults@2
