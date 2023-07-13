@@ -25,7 +25,7 @@ variables:
     - git pull --depth=1 origin main
     - "conda create --prefix /root/skllenv --channel ets --channel conda-forge python=${PYVERSION} skll=${SKLLVERSION} nose2 --yes --quiet"
   script:
-    - "TESTDIR=/root/skllcode nose2 -s /root/skllcode/tests --plugin nose2.plugins.junitxml --junit-xml ${TESTFILES}"
+    - "TESTDIR=/root/skllcode /root/skllenv/bin/nose2 -s /root/skllcode/tests --plugin nose2.plugins.junitxml --junit-xml ${TESTFILES}"
 
 # first set of test files
 testset1:
